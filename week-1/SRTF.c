@@ -1,18 +1,6 @@
 #include <stdio.h>
 #include <limits.h>
 
-// Function to sort processes by Arrival Time
-void sort(int* at, int* bt, int* p, int n) {
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (at[j] > at[j + 1]) {
-                int temp = at[j]; at[j] = at[j + 1]; at[j + 1] = temp;
-                temp = bt[j]; bt[j] = bt[j + 1]; bt[j + 1] = temp;
-                temp = p[j]; p[j] = p[j + 1]; p[j + 1] = temp;
-            }
-        }
-    }
-}
 
 int main() {
     int n;
@@ -92,3 +80,4 @@ int main() {
 
     return 0;
 }
+
