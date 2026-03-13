@@ -15,10 +15,8 @@ int main() {
         p[i] = i + 1;
     }
 
-    // 1. Sort by Arrival Time so the simulation starts correctly
-    sort(at, bt, p, n);
 
-    // 2. Initialize Remaining Time AFTER sorting
+
     for (int i = 0; i < n; i++) {
         rt[i] = bt[i];
     }
@@ -29,14 +27,14 @@ int main() {
         int idx = -1;
         int min_rt = INT_MAX;
 
-        // Find process with shortest remaining time that has arrived
+
         for (int i = 0; i < n; i++) {
             if (at[i] <= current_time && rt[i] > 0) {
                 if (rt[i] < min_rt) {
                     min_rt = rt[i];
                     idx = i;
                 }
-                // Tie-breaker: If RT is equal, pick the one that arrived first
+
                 else if (rt[i] == min_rt) {
                     if (at[i] < at[idx]) {
                         idx = i;
@@ -60,7 +58,7 @@ int main() {
         }
     }
 
-    // 3. Calculate Totals and Averages
+
     float total_tat = 0, total_wt = 0;
 
     printf("\n\nProcess \tAT\tBT\tCT\tTAT\tWT\n");
@@ -80,4 +78,5 @@ int main() {
 
     return 0;
 }
+
 
